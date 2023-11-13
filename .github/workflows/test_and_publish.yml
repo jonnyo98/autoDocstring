@@ -49,7 +49,10 @@ jobs:
               with:
                   node-version: 16
                   cache: "npm"
+            - run: npm install @vscode/vsce
             - run: npm ci
+            - name: VSCE Compile
+              run: vsce package
             - name: GitHub Release
               uses: softprops/action-gh-release@v1
               with:
@@ -59,8 +62,10 @@ jobs:
                       See [changelog](https://github.com/NilsJPWerner/autoDocstring/blob/master/CHANGELOG.md)
                   name: ${{ github.ref_name }}
                   fail_on_unmatched_files: true
-            - name: Publish to Visual Studio Marketplace
-              uses: HaaLeo/publish-vscode-extension@v1
-              with:
-                  pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
-                  registryUrl: https://marketplace.visualstudio.com
+                  files: |
+                    autodocstring-${{ github.ref }}.vsix
+            # - name: Publish to Visual Studio Marketplace
+            #   uses: HaaLeo/publish-vscode-extension@v1
+            #   with:
+            #       pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+            #       registryUrl: https://marketplace.visualstudio.com
