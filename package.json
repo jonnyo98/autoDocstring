@@ -2,7 +2,7 @@
     "name": "autodocstring",
     "displayName": "autoDocstring - Python Docstring Generator",
     "description": "Generates python docstrings automatically",
-    "version": "v0.6.2",
+    "version": "v0.6.3",
     "publisher": "jonnyo98",
     "license": "SEE LICENSE IN LICENSE",
     "icon": "images/icon.png",
