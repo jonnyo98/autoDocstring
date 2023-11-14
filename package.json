@@ -148,7 +148,8 @@
         "watch": "npm run copy_templates && tsc -watch -p ./",
         "unit_test": "mocha -r ts-node/register \"src/test/**/*.spec.ts\"",
         "prepare_integration_tests": "npm run copy_python_test_files && npm run compile",
-        "integration_test": "node out/test/run_integration_tests.js"
+        "integration_test": "node out/test/run_integration_tests.js",
+        "package": "vsce package"
     },
     "devDependencies": {
         "@types/chai": "^4.3.0",
@@ -160,6 +161,7 @@
         "@typescript-eslint/eslint-plugin": "^5.12.0",
         "@typescript-eslint/parser": "^5.12.0",
         "@vscode/test-electron": "^2.1.2",
+        "@vscode/vsce": "^2.22.0",
         "chai": "^4.3.6",
         "copyfiles": "^2.4.1",
         "eslint": "^8.9.0",
